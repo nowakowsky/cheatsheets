@@ -1,4 +1,4 @@
-# [docs url](https://docs.sqlalchemy.org/en/13/index.html)
+# [Click here to read docs](https://docs.sqlalchemy.org/en/13/index.html)
 
 ### imports, base
 ```python
@@ -37,7 +37,7 @@ session.add(item)
 session.commit()
 ```
 
-# DELETE
+### DELETE
 ```python
 item = session.query(ItemClass).filter_by(name = 'Name').one()
 session.delete(item)
