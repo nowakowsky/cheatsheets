@@ -1,6 +1,6 @@
 # [docs url](https://docs.sqlalchemy.org/en/13/index.html)
 
-# imports, base
+### imports, base
 ```python
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -11,18 +11,18 @@ Base.metadata.bind=engine
 DBSession = sessionmaker(bind = engine)
 session = DBSession()```
 
-# CREATE
+### CREATE
 ```python
 item = ItemClass(name = "Name")
 session.add(item)
 sesssion.commit()```
 
-# READ
+### READ
 ```python
 item = session.query(ItemClass).first()
 item.name```
 
-# UPDATE
+### UPDATE
 ```python
 items = session.query(ItemClass).filter_by(name= 'Name')
 for item in items:
