@@ -7,3 +7,4 @@
 
 ### python
 [sqlalchemy](https://github.com/nowakowsky/cheatsheets/blob/main/sqlalchemy.md)
+[http.server](https://github.com/nowakowsky/cheatsheets/blob/main/http.server.md)
