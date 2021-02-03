@@ -16,3 +16,8 @@ Import-Module oh-my-posh
 Set-Theme Windows_Terminal_Theme
 ```
 
+open Windows Terminal, go to settings and paste [this settings file](https://github.com/nowakowsky/cheatsheets/blob/main/Windows_Terminal_Settings.json)
+* ctrl + c, ctrl + v
+* ctrl + t -> new tab
+* ctrl + q -> close tab
+* ctrl + left / right arrow -> navigate tabs
