@@ -12,3 +12,4 @@
 
 ### Linux
 * [SSH config for ECDSA keys](https://github.com/nowakowsky/cheatsheets/blob/main/sshd_config)
+* [VNC Server](https://github.com/nowakowsky/cheatsheets/blob/main/vnc_server.md)
