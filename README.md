@@ -9,3 +9,6 @@
 
 ### Windows
 * [Windows Terminal Customization](https://github.com/nowakowsky/cheatsheets/blob/main/Windows_Terminal.md)
+
+### Linux
+* [SSH config for ECDSA keys](https://github.com/nowakowsky/cheatsheets/blob/main/sshd_config)
