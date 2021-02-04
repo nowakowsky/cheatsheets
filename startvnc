@@ -1,0 +1,75 @@
+#!/bin/bash
+# title             :startvnc, short version
+# author            :Istvan Sebestyen-Teleki
+# original script   :https://github.com/sebestyenistvan/runvncserver/blob/master/startvnc
+
+SCRIPTNAME="startvnc"
+VNCSERVER="/usr/bin/x0vncserver"
+HOMEDIR=${HOME}
+VNCDIR="${HOMEDIR}/.vnc"
+LOGFILE="${VNCDIR}/logfile"
+PASSWDFILE="${VNCDIR}/passwd"
+DISPLAY=":0"
+VNCPORT="5900"
+PIDFILE="${VNCDIR}/${HOSTNAME}${DISPLAY}.pid"
+OK="[\033[1;32mok\033[0m]"
+FAILED="[\033[1;31mfailed\033[0m]"
+RUNNING="[\033[1;32mrunning\033[0m]"
+NOTRUNNING="[\033[1;31mnot running\033[0m]"
+
+# Function to get the process id of the VNC Server
+fn_pid() {
+    CHECKPID=$(ps -fu ${USER} | grep "[x]0vncserver" | awk '{print $2}')
+    if [[ ${CHECKPID} =~ ^[0-9]+$ ]] 
+    then
+        VAR=${CHECKPID}
+        return 0
+    else
+        return 1
+    fi
+}
+
+case "$1" in
+    start)
+        echo -n "Starting VNC Server on display ${DISPLAY} "
+        fn_pid
+        if [ $? -eq 0 ]
+        then
+            echo -e ${FAILED}
+            echo -e "VNC Server is running (pid: ${VAR})"
+	    echo
+        else
+            ${VNCSERVER} -display ${DISPLAY} -passwordfile ${PASSWDFILE} -rfbport ${VNCPORT} >> ${LOGFILE} 2>&1 &
+	    if [ $? -eq 0 ]
+	    then
+            	fn_pid
+            	echo ${VAR} > ${PIDFILE}
+            	echo -e ${OK}
+	    	echo
+	else
+		echo -e $FAILED
+		echo
+		fi
+
+        fi
+
+        ;;
+
+    stop)
+    
+        echo -n "Stopping VNC Server: "
+        fn_pid
+        if [ $? -eq 0 ]
+        then
+            kill -9 ${VAR}
+            echo -ne ${OK}
+            echo -e " (pid: ${VAR})"
+	    echo
+        else
+            echo -e ${FAILED}
+            echo -e "VNC Server is not running."
+	    echo
+            exit 1
+        fi
+    ;;
+esac
