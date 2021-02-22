@@ -4,6 +4,7 @@
 * [Markdown](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
 ### python
+* [Great python cheatsheets](https://github.com/30-seconds/30-seconds-of-python/tree/master/snippets)
 * [sqlalchemy](https://github.com/nowakowsky/cheatsheets/blob/main/sqlalchemy.md)
 * [http.server](https://github.com/nowakowsky/cheatsheets/blob/main/http.server.md)
 
