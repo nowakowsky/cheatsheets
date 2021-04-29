@@ -57,8 +57,8 @@
     
         { "command": { "action": "closeTab"}, "keys": "ctrl+q"}, 
         { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+t" },
-        { "command": { "action": "nextTab"}, "keys": "ctrl+right"},
-        { "command": { "action": "prevTab"}, "keys": "ctrl+left"}
+        { "command": { "action": "nextTab"}, "keys": "ctrl+up"},
+        { "command": { "action": "prevTab"}, "keys": "ctrl+down"}
     
     ]
 }
