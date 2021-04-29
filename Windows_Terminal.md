@@ -20,4 +20,4 @@ open Windows Terminal, go to settings and paste [this settings file](https://git
 * ctrl + c, ctrl + v
 * ctrl + t -> new tab
 * ctrl + q -> close tab
-* ctrl + left / right arrow -> navigate tabs
+* ctrl + wp / down arrow -> navigate tabs
